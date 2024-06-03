@@ -1,15 +1,32 @@
-Source: template-repository
-Section: unknown
+Source: golang-github-glycerine-go-unsnap-stream
+Maintainer: Debian Go Packaging Team <pkg-go-maintainers@lists.alioth.debian.org>
+Uploaders: Nilesh Patra <nilesh@debian.org>
+Section: devel
+Testsuite: autopkgtest-pkg-go
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Build-Depends: debhelper-compat (= 12),
+               dh-golang,
+               golang-any,
+               golang-snappy-go-dev
+Standards-Version: 4.5.0
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-github-glycerine-go-unsnap-stream
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-github-glycerine-go-unsnap-stream.git
+Homepage: https://github.com/glycerine/go-unsnap-stream
+Rules-Requires-Root: no
+XS-Go-Import-Path: github.com/glycerine/go-unsnap-stream
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: golang-github-glycerine-go-unsnap-stream-dev
+Architecture: all
+Depends: ${misc:Depends},
+         golang-snappy-go-dev
+Description: library for decoding the snappy streaming format
+ Package unsnap is a small golang library for decoding and encoding
+ the snappy streaming format, specified here:
+ https://github.com/google/snappy/blob/master/framing_format.txt
+ .
+ Note that the streaming or framing format for snappy is different from
+ snappy itself. Think of it as a train of boxcars: the streaming format
+ breaks your data in chunks, applies snappy to each chunk alone, then
+ puts a thin wrapper around the chunk, and sends it along in turn. You
+ can begin decoding before receiving everything. And memory requirements
+ for decoding are sane.

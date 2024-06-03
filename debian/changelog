@@ -1,5 +1,35 @@
-template-repository (1.0-1) unstable; urgency=medium
+golang-github-glycerine-go-unsnap-stream (0.0~git20210130.47dfef3-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream version 0.0~git20210130.47dfef3
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Nilesh Patra <nilesh@debian.org>  Wed, 24 Feb 2021 11:11:12 +0530
+
+golang-github-glycerine-go-unsnap-stream (0.0~git20190901.81cf024-1) unstable; urgency=medium
+
+  [ Nilesh Patra ]
+  * New upstream version 0.0~git20190901.81cf024
+  * Drop compat, switch to debhelper-compat version 12
+  * Add upstream/metadata
+  * Add "Rules-Requires-Root:no"
+  * Bump standards version to 4.5.0
+  * Add myself to uploaders (Closes: #940359)
+    + Remove Alexandre from uploaders
+    + Thank you Alexandre for your work so far
+  * Fix copyright
+
+  [ Utkarsh Gupta ]
+  * Remove needless Files-Excluded section from d/copyright
+
+ -- Nilesh Patra <npatra974@gmail.com>  Sat, 21 Mar 2020 15:15:00 +0530
+
+golang-github-glycerine-go-unsnap-stream (0.0~git20180323.9f0cb55-2) unstable; urgency=medium
+
+  * d/watch: use git mode.
+
+ -- Alexandre Viau <aviau@debian.org>  Sat, 17 Nov 2018 22:47:42 -0500
+
+golang-github-glycerine-go-unsnap-stream (0.0~git20180323.9f0cb55-1) unstable; urgency=medium
+
+  * Initial release (Closes: #900138)
+
+ -- Alexandre Viau <aviau@debian.org>  Sat, 26 May 2018 13:47:45 -0400

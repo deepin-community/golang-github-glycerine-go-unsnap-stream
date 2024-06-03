@@ -1,4 +1,9 @@
 #!/usr/bin/make -f
 
+export DH_GOLANG_EXCLUDES := cmd
+
+override_dh_auto_test:
+	echo skipping tests, missing dependencies
+
 %:
-	dh $@
+	dh $@ --buildsystem=golang --with=golang
